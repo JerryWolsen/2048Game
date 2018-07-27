@@ -13,8 +13,8 @@ let WSHeight = WSRect.height
 let WSWidth = WSRect.width
 let WSGamePadding: CGFloat = 15
 let WSGameZoneSize: CGFloat = WSWidth - 2 * WSGamePadding
-let WSBrickSize = ( WSGameZoneSize - WSBrickPadding * 5 ) / 4
 let WSBrickPadding: CGFloat = 8
+let WSBrickSize = ( WSGameZoneSize - WSBrickPadding * 5 ) / 4
 
 class ViewController: UIViewController {
 
@@ -23,9 +23,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "2048";
         setBaseView()
-        
+        addSwipeGesture()
     }
     
     func setBaseView() {
@@ -46,20 +45,43 @@ class ViewController: UIViewController {
         let x: CGFloat = CGFloat (index % 4)
         let y: CGFloat = CGFloat (index / 4)
         let rect = CGRect(x: WSBrickPadding * (x + 1) + x * WSBrickSize, y: WSBrickPadding * (y + 1) + y * WSBrickSize, width: WSBrickSize, height: WSBrickSize)
-        let brick = UIView(frame: rect)
-        
-        let label : UILabel = UILabel()
-        label.text = String(0)
-        label.textColor = UIColor.white
-        label.font = UIFont.boldSystemFont(ofSize: 32)
-        label.textAlignment = NSTextAlignment.center
-        label.backgroundColor = UIColor.clear
-        label.frame = CGRect(x: WSBrickSize/4, y: WSBrickSize/4, width: WSBrickSize/2, height: WSBrickSize/2)
-        
-        brick.addSubview(label)
+        let brick = WSBrickView(frame: rect)
         self.rectView?.addSubview(brick)
-        brick.backgroundColor = UIColor.darkGray
+        brick.changeColor(color: UIColor.darkGray)
+        brick.changeNum(num: index)
         self.brickArr?.append(brick)
+    }
+    
+    func addSwipeGesture() {
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp(_:)))
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown(_:)))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft(_:)))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight(_:)))
+        swipeUp.direction = .up
+        swipeDown.direction = .down
+        swipeLeft.direction = .left
+        swipeRight.direction = .right
+        
+        view.addGestureRecognizer(swipeUp)
+        view.addGestureRecognizer(swipeDown)
+        view.addGestureRecognizer(swipeLeft)
+        view.addGestureRecognizer(swipeRight)
+    }
+    
+    @objc func swipeUp(_ recognizer: UISwipeGestureRecognizer)  {
+        print("up")
+    }
+    
+    @objc func swipeDown(_ recognizer: UISwipeGestureRecognizer)  {
+        print("down")
+    }
+    
+    @objc func swipeLeft(_ recognizer: UISwipeGestureRecognizer)  {
+        print("left")
+    }
+    
+    @objc func swipeRight(_ recognizer: UISwipeGestureRecognizer)  {
+        print("right")
     }
 }
 
