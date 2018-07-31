@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WS2048GameVC.swift
 //  2048
 //
 //  Created by wushang on 2018/7/27.
@@ -16,15 +16,18 @@ let WSGameZoneSize: CGFloat = WSWidth - 2 * WSGamePadding
 let WSBrickPadding: CGFloat = 8
 let WSBrickSize = ( WSGameZoneSize - WSBrickPadding * 5 ) / 4
 
-class ViewController: UIViewController {
+var brickArr = [WSBrickView]()
+
+class WS2048GameVC: UIViewController {
 
     var rectView: UIView?
-    var brickArr: Array<UIView>?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setBaseView()
         addSwipeGesture()
+        
+        WSGameCore.startGame()
     }
     
     func setBaseView() {
@@ -48,8 +51,8 @@ class ViewController: UIViewController {
         let brick = WSBrickView(frame: rect)
         self.rectView?.addSubview(brick)
         brick.changeColor(color: UIColor.darkGray)
-        brick.changeNum(num: index)
-        self.brickArr?.append(brick)
+        brick.num = 0
+        brickArr.append(brick)
     }
     
     func addSwipeGesture() {

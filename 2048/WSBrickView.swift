@@ -12,6 +12,15 @@ class WSBrickView: UIView {
 
     let label = UILabel(frame: CGRect.zero)
     
+    var _num: NSInteger?
+    var num: NSInteger?{
+
+        didSet {
+            changeNum(num: num!)
+        }
+        
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame);
         label.frame = CGRect(x: frame.width/4, y: frame.height/4, width: frame.width/2, height: frame.height/2)
@@ -39,7 +48,13 @@ class WSBrickView: UIView {
     }
     
     func changeNum (num: NSInteger) {
-        label.text = String(num)
+        
+        if(num > 0){
+            label.text = String(num)
+        }else {
+            label.text = ""
+        }
+       
     }
     
     func changeColor(color: UIColor) {

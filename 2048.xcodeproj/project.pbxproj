@@ -13,6 +13,7 @@
 		C4997ACB210AC63F00CBFBB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4997ACA210AC63F00CBFBB3 /* Assets.xcassets */; };
 		C4997ACE210AC63F00CBFBB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4997ACC210AC63F00CBFBB3 /* LaunchScreen.storyboard */; };
 		C4997AD6210AFE9A00CBFBB3 /* WSBrickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4997AD5210AFE9A00CBFBB3 /* WSBrickView.swift */; };
+		C4AFB936211010A400D6C9BC /* WSGameCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AFB935211010A400D6C9BC /* WSGameCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C4997ACD210AC63F00CBFBB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4997ACF210AC63F00CBFBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4997AD5210AFE9A00CBFBB3 /* WSBrickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSBrickView.swift; sourceTree = "<group>"; };
+		C4AFB935211010A400D6C9BC /* WSGameCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSGameCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				C4997AC3210AC63F00CBFBB3 /* AppDelegate.swift */,
 				C4997AC5210AC63F00CBFBB3 /* WS2048GameVC.swift */,
+				C4997AD5210AFE9A00CBFBB3 /* WSBrickView.swift */,
+				C4AFB935211010A400D6C9BC /* WSGameCore.swift */,
 				C4997AC7210AC63F00CBFBB3 /* Main.storyboard */,
 				C4997ACA210AC63F00CBFBB3 /* Assets.xcassets */,
 				C4997ACC210AC63F00CBFBB3 /* LaunchScreen.storyboard */,
 				C4997ACF210AC63F00CBFBB3 /* Info.plist */,
-				C4997AD5210AFE9A00CBFBB3 /* WSBrickView.swift */,
 			);
 			path = 2048;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AFB936211010A400D6C9BC /* WSGameCore.swift in Sources */,
 				C4997AD6210AFE9A00CBFBB3 /* WSBrickView.swift in Sources */,
 				C4997AC6210AC63F00CBFBB3 /* WS2048GameVC.swift in Sources */,
 				C4997AC4210AC63F00CBFBB3 /* AppDelegate.swift in Sources */,
