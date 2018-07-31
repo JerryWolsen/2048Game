@@ -32,4 +32,31 @@ class WSGameCore: NSObject {
         brickArr[Int(randomIndex)].num = 2
         
     }
+    
+    static func canMoveLeft() -> Bool {
+        
+        let cnt = brickArr.count / 4
+        for index in 0..<cnt {
+            
+            for pos in 1..<4 {
+                let st = index * 4 + pos;
+                if brickArr[st].num! > 0 {
+                    if brickArr[st-1].num == 0 || brickArr[st].num == brickArr[st - 1].num {
+                        return true;
+                    }
+                }
+                
+            }
+        }
+        
+        return false
+    }
+    
+    
+    
+    static func moveLeft () {
+        if (canMoveLeft()) {
+            print("left OK")
+        }
+    }
 }

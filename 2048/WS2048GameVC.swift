@@ -81,6 +81,7 @@ class WS2048GameVC: UIViewController {
     
     @objc func swipeLeft(_ recognizer: UISwipeGestureRecognizer)  {
         print("left")
+        WSGameCore.moveLeft()
     }
     
     @objc func swipeRight(_ recognizer: UISwipeGestureRecognizer)  {
